@@ -1,0 +1,57 @@
+<!-- TASK 1, Estructura base (HTML) -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista de notas</title>
+</head>
+<body style="background-color: rgb(16, 4, 22); color: beige; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <header style="display: flex; align-items: center; background-color:#0f030f; height: 3rem; color: beige; box-shadow: 0px 10px 15px rgba(37, 4, 56, 0.507);">
+        <h1>Lista de notas</h1>
+    </header>
+    <main>
+        <section style="padding: 1rem; color: beige;">
+            <label for="">Agredar nota: </label>
+            <input type="number" name="" id="nota" placeholder="0.0">
+            <button id="btn-nota" onclick="agregarNota()">Agregar</button>
+        </section>
+
+        <ul id="listaNotas">
+
+        </ul>
+    </main>
+    <script>
+        // TASK 2, Seleccionar el input y el button
+        function agregarNota() { 
+            const nota = Number(document.getElementById("nota").value);
+            const boton = document.getElementById("btn-nota");
+            const listaNotas = document.getElementById("listaNotas");
+            const li = document.createElement("li");
+            
+            
+        // TASK 3, Validación de errores e insertar elementos al HTML
+            console.log(nota);
+            
+            if (!nota){
+                alert("Por favor ingrese una nota");
+                
+            }
+            const = notaA listaNotas.appendChild(li);
+
+            li.textContent= nota.value;
+            
+        // TASK 4, Botón eliminar
+            // const botonEliminar = document.createElement("button");
+            // botonEliminar.textContent = "Eliminar";
+            // li.appendChild(botonEliminar);
+
+            // botonEliminar.addEventListener("click", () => {
+            //     listaNotas.removeChild(li);
+            // });
+
+            // nota.value = "";
+        }
+    </script>
+</body>
+</html>
