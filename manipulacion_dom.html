@@ -13,7 +13,7 @@
     <main>
         <section style="padding: 1rem; color: beige;">
             <label for="">Agredar nota: </label>
-            <input id="nota" type="number" placeholder="0">
+            <input id="nota" type="text" placeholder="0">
             <button id="btn-nota">Agregar</button>
         </section>
 
@@ -39,8 +39,8 @@
                 return;                
             }
 
-            listaNotas.appendChild(li);
             li.textContent = nota.value;
+            listaNotas.appendChild(li);
 
             nota.value = "";        
             nota.focus();    
@@ -53,19 +53,60 @@
             botonEliminar.style.border = "none";
             botonEliminar.style.borderRadius = "2px";
             botonEliminar.style.backgroundColor = "#454545";
-
+            
             botonEliminar.textContent = "❌";
             li.appendChild(botonEliminar);
     
             botonEliminar.addEventListener("click", () => {
-                listaNotas.removeChild(li);
-            });         
+                let confirmacion = confirm("Eliminar nota?");
+                if (confirmacion){
+                    listaNotas.remove(li);
+                } else {
+                    li.appendChild(botonEliminar);
+                }
+            });
+            
+            // Task 5 localStorage
+
+            //guardar en localStorage
+            localStorage.setItem("nota", JSON.stringify(li.textContent));
+
+            const notaGuardada = localStorage.getItem("nota");
+            
+            JSON.parse(notaGuardada);
+            console.log(notaGuardada);
+            
         }
 
-        boton.addEventListener("click", agregarNota);
 
-        
-        
+
+        // async function agregarJson(nota) {
+        //     const url = "http://localhost:3000/notas";
+        //     let grade = document.getElementById("nota");
+
+        //     const datos = {
+        //         nota: grade.value,
+        //     }
+            
+        //     const respuesta = await fetch (url, {
+        //         method: "POST",
+        //         headers: {"Content-Type": "application/json"},
+        //         body: JSON.stringify(datos)
+        //     });
+
+        //     if (respuesta.ok){
+        //         const data = await respuesta.json();
+        //         console.log("nota guardada:", data);       
+        //     } else {
+        //         console.error("Error al guardar la nota:", respuesta.statusText);
+        //     }
+        // }
+
+
+        boton.addEventListener("click", () =>  {
+            agregarNota();
+            });
+
     </script>
 </body>
 </html>
