@@ -31,24 +31,24 @@ function agregarProducto() {
     // Agregamos la información del objeto al contenido del item
     item.textContent = `producto: ${datosProducto.nombre} - precio: $${datosProducto.precio} - ${datosProducto.decription}`;
     
-    // // Botón eliminar para cada item
-    // const btnEliminar = document.createElement("button");
-    // item.appendChild(btnEliminar);
-    // btnEliminar.textContent = "Eliminar";
+    // Botón eliminar para cada item
+    const btnEliminar = document.createElement("button");
+    item.appendChild(btnEliminar);
+    btnEliminar.textContent = "Eliminar";
     
-    // btnEliminar.addEventListener("click", () => {
-    //     let confirmacion = confirm(`Seguro que desea eliminar el producto ${nombre.value}`);
-    //     if (!confirmacion){
-    //         list.appendChild(item);
-    //     }else {
-    //         list.removeChild(item);
-    //     }
-    // });
+    btnEliminar.addEventListener("click", () => {
+        let confirmacion = confirm(`Seguro que desea eliminar el producto ${nombre.value}`);
+        if (!confirmacion){
+            list.appendChild(item);
+        }else {
+            list.removeChild(item);
+        }
+    });
 
-    // // localStorage y visualización de datos por consola
-    // localStorage.setItem("productos", JSON.stringify(datosProducto));
-    // const mostrarNotas = JSON.parse(localStorage.getItem("productos"));
-    // console.log(mostrarNotas);
+    // localStorage y visualización de datos por consola
+    localStorage.setItem("productos", JSON.stringify(datosProducto));
+    const mostrarNotas = JSON.parse(localStorage.getItem("productos"));
+    console.log(mostrarNotas);
 
     // Limpiar campos
     nombre.value = "";
