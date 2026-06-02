@@ -1,5 +1,7 @@
 const btnEnviar = document.getElementById("btn-enviar");
 
+
+
 function agregarProducto() {
     let nombre = document.getElementById("nameProduct");
     let precio = document.getElementById("priceProduct");
@@ -36,13 +38,17 @@ function agregarProducto() {
     item.appendChild(btnEliminar);
     btnEliminar.textContent = "Eliminar";
     
+    
     btnEliminar.addEventListener("click", () => {
         let confirmacion = confirm(`Seguro que desea eliminar el producto ${nombre.value}`);
         if (!confirmacion){
             list.appendChild(item);
         }else {
             list.removeChild(item);
+            
         }
+
+
     });
 
     // localStorage y visualización de datos por consola
@@ -56,6 +62,23 @@ function agregarProducto() {
     decription.value = "";
 
     return datosProducto;
+}
+
+async function  mandarDatos() {
+    const url = "http://localhost:3000/productos";
+
+    try{
+        const response = await fetch(url, {
+            method: "POST",
+            headers: {"Contend-Type": "aplication/json"},
+            body: JSON.stringify(datosProducto)
+        })
+        const data = await response.json();
+        console.log(data);
+
+    }catch(error){
+        console.log(error);
+    }
 }
 
 btnEnviar.addEventListener("click", () => {
