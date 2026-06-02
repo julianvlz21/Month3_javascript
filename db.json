@@ -1,5 +1,23 @@
 {
   "productos": [
-    {"nombre": "jabon"}
-  ]
+    {
+      "nombre": "agua",
+      "precio": "22",
+      "decription": "asas",
+      "id": "GVWh2T8deSo"
+    },
+    {
+      "nombre": "arroz",
+      "precio": "3000",
+      "decription": "asas",
+      "id": "j_JqLLDS0Jw"
+    },
+    {
+      "nombre": "aaaaa",
+      "precio": "3333",
+      "decription": "adsdsds",
+      "id": "xjxmYBMLlYs"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
