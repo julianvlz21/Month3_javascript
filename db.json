@@ -1,0 +1,29 @@
+{
+  "productos": [
+    {
+      "nombre": "agua",
+      "precio": "22",
+      "decription": "asas",
+      "id": "GVWh2T8deSo"
+    },
+    {
+      "nombre": "sdsd",
+      "precio": "222",
+      "decription": "ccc",
+      "id": "uWr9y_7CT5g"
+    },
+    {
+      "nombre": "arroz",
+      "precio": "3000",
+      "decription": "asas",
+      "id": "j_JqLLDS0Jw"
+    },
+    {
+      "nombre": "aaaaa",
+      "precio": "2222",
+      "decription": "vdvd",
+      "id": "wRWHetboooE"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
